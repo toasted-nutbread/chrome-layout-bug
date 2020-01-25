@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 14px;
+  font-family: "Meiryo" !important;
+}
+
+.container {
+  padding: 24px;
+}
+.container.big {
+  padding-bottom: 200vh;
+}
+
+.text {
+  display: inline-block;
+  font-size: 24px;
+}
+
+  </style>
+</head>
+<body>
+
+<div><div id="content"></div></div>
+
+<script>
+
+window.addEventListener('hashchange', () => {
+  const {content} = JSON.parse(decodeURIComponent(window.location.hash.substring(1)));
+  document.querySelector('#content').innerHTML = content;
+}, false);
+
+</script>
+</body>
+</html>
